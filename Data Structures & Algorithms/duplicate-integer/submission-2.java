@@ -1,0 +1,15 @@
+
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+        HashMap<Integer, Integer> freq = new HashMap<>();
+
+        for (int i : nums) {
+            freq.put(i, freq.getOrDefault(i, 0) + 1);
+
+            if (freq.get(i) > 1)
+                return true;
+        }
+
+        return false;
+    }
+}
